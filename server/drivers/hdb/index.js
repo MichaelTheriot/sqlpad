@@ -15,7 +15,7 @@ function getSchemaSql(schema) {
       columns.DATA_TYPE_NAME as data_type
     FROM 
       SYS.TABLES tables
-      JOIN SYS.COLUMNS columns ON tables.SCHEMA_NAME = columns.SCHEMA_NAME AND tables.TABLE_NAME = columns.TABLE_NAME
+      JOIN SYS.TABLE_COLUMNS columns ON tables.SCHEMA_NAME = columns.SCHEMA_NAME AND tables.TABLE_NAME = columns.TABLE_NAME
     ${whereSql}
     ORDER BY 
      columns.POSITION
